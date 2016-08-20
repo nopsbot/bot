@@ -21,15 +21,20 @@ var PluginFactory = function() {
 
         return plugin;
     }
-
+	
+	function clear() {
+		plugins = [];
+	}
+	
     function validate(plugin) {
         //TODO: validate the param is a plugin
-        return (plugin == true);
+        return (Object.keys(plugin).length > 0 && plugin.constructor === Object);
     }
 
     return {
         addPlugin: addPlugin,
-        getPlugin: getPlugin
+        getPlugin: getPlugin,
+		clear: clear
     }
 }();
 
