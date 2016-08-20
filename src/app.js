@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var builder = require('botbuilder');
 var response = require('./logic/response');
+var pluginFactory = require('./factories/plugin.factory');
 
 app.listen(process.env.port || 3978, function () {
   console.log('nopsbot is ready.');
